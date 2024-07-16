@@ -1,0 +1,67 @@
+Copyright Andrei-Marian Rusanescu 311CAb 2023-2024
+
+The objective of the programme is to simulate Octave, open source
+Matlab simulator.
+It has a number of interesting features of matrix operations, such
+as multiplication, finding the the transpose, resizing a matrix
+using its prior rows and columns, logarithmic complexity exponentiation
+of square matrices and Strassen's algorithm for matrix multiplication
+implemented in a simpler way.
+The key feature of the programme is that everything is done using
+dynamic memory allocation, therefore using just enough memory.
+Every operation has a specifc command attached to it.
+
+1. The first one should be 'L', which loads up the matrices one by one
+in an array of matrices (3D array).
+The size of the array is doubled when it gets fully occupied.
+
+2. Next command is 'D' - used for printing the sizes of a specific matrix
+in the 3D resizable array.
+
+3. 'P' command prints a specific matrix from the array.
+
+4. The 'C' command concatenates a matrix using its original values.
+Basically, the user has to specify how many rows and columns the
+resized matrix has and which rows and columns he wants. Very useful
+for permutations inside the matrix.
+
+5. For matrix multiplication, the programme has command 'M', which firstly
+checks if the matrices are compatible for multiplication, then does the
+desired operation and loads the resulted matrix at the end of the array.
+
+6. Command 'O' sorts the array of the matrices using bubble sort.
+The matrices are sorted in an ascending order regarding the sum of the
+matrix' elements. To avoid overflow, every mathematical operation is
+performed % 10007. The programme swaps matrices just like decimal numbers
+in a regular array benefiting from the advantages of pointers.
+
+7. 'T' transforms a specific matrix in its' transpose.
+The initial matrix is substituted by its' transpose in place.
+
+8. Next feature is command 'R' which multiplies a given matrix by
+a number of times using logarithmic complexity exponentiation of
+matrices.
+The power the user wants its' matrix to be raised at is positive.
+Also, if the user introduces the power 0, the programme prints the
+identity matrix.
+Old matrix is substituted by the new one.
+
+9. 'F' command frees a specific matrix from the array.
+If too many matrices are freed, then the array is resized to half of its
+size.
+All remaining matrices are shifted one by one after freeing a matrix,
+using pointers.
+
+10. 'Q' command frees all of the allocated memory, finishing the programme.
+
+11. Last command, 'R', has its purpose in matrix multiplication of very
+large matrices.
+It features Strassen's algorithm for matrix multiplication.
+It is implemented in a recursive manner, dividing the matrix by portions
+of half of the original dimension until it gets to a 1x1 matrix.
+Basically it divides the original matrix in 4 smaller matrices which are
+also divided in 4 other small matrices and so on until all matrices are
+1x1 and from this point forward, multiplication is behaving like decimal
+numbers, a * b.
+It does what the command 'M' does but in a more efficient way for larger
+matrices.
