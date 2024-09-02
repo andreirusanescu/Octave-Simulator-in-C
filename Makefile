@@ -1,4 +1,4 @@
-#Copyright Andrei-Marian Rusanescu 311CAb 2023-2024
+# Copyright Andrei-Marian Rusanescu 311CAb 2023-2024
 CC=gcc
 CFLAGS=-Wall -Wextra -std=c99
 

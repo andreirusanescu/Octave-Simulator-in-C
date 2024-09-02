@@ -1,12 +1,12 @@
 Copyright Andrei-Marian Rusanescu 311CAb 2023-2024
 
 The objective of the programme is to simulate Octave, open source
-Matlab simulator.
-It has a number of interesting features of matrix operations, such
-as multiplication, finding the the transpose, resizing a matrix
-using its prior rows and columns, logarithmic complexity exponentiation
-of square matrices and Strassen's algorithm for matrix multiplication
-implemented in a simpler way.
+Matlab simulator. It has a number of interesting features of matrix
+operations, such as multiplication, finding the the transpose, resizing
+a matrix using its prior rows and columns, logarithmic complexity
+exponentiation of square matrices and Strassen's algorithm for matrix
+multiplication implemented in a simpler way.
+
 The key feature of the programme is that everything is done using
 dynamic memory allocation, therefore using just enough memory.
 Every operation has a specifc command attached to it.
@@ -40,28 +40,23 @@ The initial matrix is substituted by its' transpose in place.
 
 8. Next feature is command 'R' which multiplies a given matrix by
 a number of times using logarithmic complexity exponentiation of
-matrices.
-The power the user wants its' matrix to be raised at is positive.
-Also, if the user introduces the power 0, the programme prints the
-identity matrix.
-Old matrix is substituted by the new one.
+matrices. The power the user wants its' matrix to be raised at is
+positive. Also, if the user introduces the power 0, the programme
+prints the identity matrix. Old matrix is substituted by the new one.
 
-9. 'F' command frees a specific matrix from the array.
-If too many matrices are freed, then the array is resized to half of its
-size.
+9. 'F' command frees a specific matrix from the array. If too many
+matrices are freed, then the array is resized to half of its size.
 All remaining matrices are shifted one by one after freeing a matrix,
 using pointers.
 
 10. 'Q' command frees all of the allocated memory, finishing the programme.
 
-11. Last command, 'R', has its purpose in matrix multiplication of very
-large matrices.
-It features Strassen's algorithm for matrix multiplication.
+11. Last command, 'S', has its purpose in matrix multiplication of very
+large matrices. It features Strassen's algorithm for matrix multiplication.
 It is implemented in a recursive manner, dividing the matrix by portions
-of half of the original dimension until it gets to a 1x1 matrix.
-Basically it divides the original matrix in 4 smaller matrices which are
-also divided in 4 other small matrices and so on until all matrices are
-1x1 and from this point forward, multiplication is behaving like decimal
-numbers, a * b.
+of half of the original dimension until it gets to a 1x1 matrix. Basically
+it divides the original matrix in 4 smaller matrices which are also divided
+in 4 other small matrices and so on until all matrices are 1x1 and from this
+point forward, multiplication is behaving like decimal numbers, a * b.
 It does what the command 'M' does but in a more efficient way for larger
 matrices.
